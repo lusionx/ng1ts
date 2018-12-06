@@ -1,6 +1,7 @@
 
 import * as moment from "moment"
-import * as angular from 'angular'
+import app from './app'
+
 import { StateProvider, Ng1StateDeclaration } from 'angular-ui-router'
 
 
@@ -13,13 +14,13 @@ function config($stateProvider: StateProvider) {
     }
     $stateProvider.state(hello)
     const about: Ng1StateDeclaration = {
-        name: 'hello',
-        url: '/hello',
-        template: '<h3>hello world!</h3>'
+        name: 'about',
+        url: '/about',
+        template: '<h3>Its the UI-Router hello world app!</h3>'
     }
     $stateProvider.state(about)
 }
-angular.module(window.spa).config(inject.concat([config]))
+app.config(inject.concat([config]))
 
 const SELF = 'Route'
 export default SELF

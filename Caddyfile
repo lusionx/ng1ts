@@ -1,4 +1,4 @@
-
 http://127.0.0.1:7012 {
-  on startup npm run tscw
+  log stdout
+  on startup npm run tsc
 }

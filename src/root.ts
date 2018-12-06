@@ -1,9 +1,13 @@
-import * as angular from 'angular'
-import UIRouter from 'angular-ui-router'
+import app from './app'
 
-const app = angular.module(window.spa, [UIRouter])
+// 通过import来执行注册
+import Router from './router'
+import Controller from './controller'
+const Root = {
+    [app.name]: [Router, Controller]
+}
+export default Root
+
 app.run([() => {
-    console.log('app.run', window.spa)
+    console.log('run', JSON.stringify(Root))
 }])
-
-export default app.name

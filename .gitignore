@@ -5,3 +5,4 @@ dist/
 .vscode
 *.swp
 src/*.js
+js/*.js

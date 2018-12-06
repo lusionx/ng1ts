@@ -1,5 +1,5 @@
 import * as moment from "moment"
-import * as angular from 'angular'
+import app from './app'
 
 
 interface Scope extends ng.IScope {
@@ -17,6 +17,6 @@ function controller($scope: Scope) {
     $scope.vm = vm
 }
 
-angular.module(window.spa).controller(SELF, inject.concat([controller]))
+app.controller(SELF, inject.concat([controller]))
 
 export default SELF
