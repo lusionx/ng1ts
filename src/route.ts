@@ -1,16 +1,25 @@
 
+import * as moment from "moment"
+import * as angular from 'angular'
+import { StateProvider, Ng1StateDeclaration } from 'angular-ui-router'
 
-const app = angular.module(window.spa, [])
-console.log(window.name)
 
-interface Scope extends ng.IScope {
-    vm: any
-}
-
-app.controller('main', ['$scope', ($scope: Scope) => {
-    const vm = {
-        spa: window.spa,
-        text: 'lxing',
+const inject: any = ['$stateProvider']
+function config($stateProvider: StateProvider) {
+    const hello: Ng1StateDeclaration = {
+        name: 'hello',
+        url: '/hello',
+        template: '<h3>hello world!</h3>'
     }
-    $scope.vm = vm
-}])
+    $stateProvider.state(hello)
+    const about: Ng1StateDeclaration = {
+        name: 'hello',
+        url: '/hello',
+        template: '<h3>hello world!</h3>'
+    }
+    $stateProvider.state(about)
+}
+angular.module(window.spa).config(inject.concat([config]))
+
+const SELF = 'Route'
+export default SELF
