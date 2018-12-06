@@ -1,0 +1,27 @@
+{
+  "name": "ng1ts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "tsc": "tsc"
+  },
+  "repository": {
+    "url": "https://github.com/lusionx/ng1ts"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lusionx/ng1ts/issues"
+  },
+  "homepage": "https://github.com/lusionx/ng1ts#readme",
+  "dependencies": {
+    "angular": "^1.7.5",
+    "angular-ui-router": "^1.0.20",
+    "moment": "^2.22.2"
+  },
+  "devDependencies": {
+    "@types/angular": "^1.6.51",
+    "typescript": "^3.2.1"
+  }
+}
