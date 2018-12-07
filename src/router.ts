@@ -1,12 +1,9 @@
-
-import * as moment from "moment"
-import app from './app'
-
+import { app } from './all'
 import { StateProvider, Ng1StateDeclaration } from 'angular-ui-router'
 
 
 const inject: any = ['$stateProvider']
-function config($stateProvider: StateProvider) {
+function Router($stateProvider: StateProvider) {
     const hello: Ng1StateDeclaration = {
         name: 'hello',
         url: '/hello',
@@ -20,7 +17,7 @@ function config($stateProvider: StateProvider) {
     }
     $stateProvider.state(about)
 }
-app.config(inject.concat([config]))
 
-const SELF = 'Route'
-export default SELF
+app.config(inject.concat([Router]))
+const SELF = Router.name
+export { SELF as name }

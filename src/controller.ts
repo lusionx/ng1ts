@@ -1,14 +1,13 @@
 import * as moment from "moment"
-import app from './app'
+import { app } from './all'
 
 
 interface Scope extends ng.IScope {
     vm: any
 }
 
-const SELF = 'mainCtr'
 const inject: any = ['$scope']
-function controller($scope: Scope) {
+function mainCtr($scope: Scope) {
     const vm = {
         spa: window.spa,
         text: 'lxing',
@@ -17,6 +16,6 @@ function controller($scope: Scope) {
     $scope.vm = vm
 }
 
-app.controller(SELF, inject.concat([controller]))
-
-export default SELF
+const SELF = mainCtr.name
+app.controller(SELF, inject.concat([mainCtr]))
+export { SELF as name}

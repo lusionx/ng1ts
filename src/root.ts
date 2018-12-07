@@ -1,13 +1,13 @@
-import app from './app'
+import { app } from './all'
 
 // 通过import来执行注册
-import Router from './router'
-import Controller from './controller'
-const Root = {
-    [app.name]: [Router, Controller]
-}
-export default Root
+import * as Router from './router'
+import * as Controller from './controller'
 
-app.run([() => {
+
+export const name = app.run([() => {
+    const Root = {
+        [app.name]: [Router.name, Controller.name]
+    }
     console.log('run', JSON.stringify(Root))
-}])
+}]).name
