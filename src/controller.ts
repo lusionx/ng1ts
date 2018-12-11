@@ -15,7 +15,5 @@ function mainCtr($scope: Scope) {
     }
     $scope.vm = vm
 }
-
-const SELF = mainCtr.name
-app.controller(SELF, inject.concat([mainCtr]))
-export { SELF as name}
+app.controller(mainCtr.name, inject.concat([mainCtr]))
+export const main = mainCtr.name
