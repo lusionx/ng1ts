@@ -1,4 +1,4 @@
-import { app } from './all'
+import { app } from '../all'
 
 export class mySrv {
     constructor(protected $log: ng.ILogService) {

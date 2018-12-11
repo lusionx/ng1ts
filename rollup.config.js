@@ -1,7 +1,7 @@
 import resolve from 'rollup-plugin-node-resolve'
 import commonjs from 'rollup-plugin-commonjs'
 export default {
-    input: 'src/root.js',
+    input: 'src/index.js',
     external: ['angular', 'moment'],
     output: {
         file: "js/app.js",

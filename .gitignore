@@ -4,5 +4,5 @@ package-lock.json
 dist/
 .vscode
 *.swp
-src/*.js
+src/**/*.js
 js/*.js

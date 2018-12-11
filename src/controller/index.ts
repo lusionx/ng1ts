@@ -1,5 +1,5 @@
 import * as moment from "moment"
-import { app } from './all'
+import { app } from '../all'
 
 
 interface Scope extends ng.IScope {
