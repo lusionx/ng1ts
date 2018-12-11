@@ -5,8 +5,8 @@ export default {
     external: ['angular', 'moment'],
     output: {
         file: "js/app.js",
-        format: 'iife',
-        name: 'pkg'
+        name: 'pkg' + Math.ceil(Math.random() * 1000),
+        format: 'iife'
     },
     plugins: [
         resolve(), // so Rollup can find `ms`

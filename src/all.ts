@@ -7,3 +7,8 @@ export interface Share {
 }
 export const shareV = 'shareV'
 app.value(shareV, { ua: 'ua' } as Share)
+
+
+export interface Scope<T> extends ng.IScope {
+    vm: T
+}

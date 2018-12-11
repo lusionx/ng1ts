@@ -1,19 +1,19 @@
 import * as moment from "moment"
-import { app } from '../all'
+import { app, Scope } from '../all'
 
 
-interface Scope extends ng.IScope {
-    vm: any
+interface Vm {
+    spa: string
+    text: string
+    now: string
 }
-
 const inject: any = ['$scope']
-function mainCtr($scope: Scope) {
-    const vm = {
+function mainCtr($scope: Scope<Vm>) {
+    $scope.vm  = {
         spa: window.spa,
         text: 'lxing',
         now: moment().format(),
     }
-    $scope.vm = vm
 }
 app.controller(mainCtr.name, inject.concat([mainCtr]))
 export const main = mainCtr.name
