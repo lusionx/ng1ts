@@ -7,13 +7,13 @@ interface Vm {
     text: string
     now: string
 }
-const inject: any = ['$scope']
 function mainCtr($scope: Scope<Vm>) {
-    $scope.vm  = {
+    $scope.vm = {
         spa: window.spa,
         text: 'lxing',
         now: moment().format(),
     }
 }
-app.controller(mainCtr.name, inject.concat([mainCtr]))
+mainCtr.$inject = ['$scope']
+app.controller(mainCtr.name, mainCtr)
 export const main = mainCtr.name

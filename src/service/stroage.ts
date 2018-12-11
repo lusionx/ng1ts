@@ -24,7 +24,8 @@ class localStorage implements IStorageServ {
         this.storage.removeItem(k)
     }
 }
-app.service(localStorage.name, ['$window', localStorage])
+localStorage.$inject = ['$window']
+app.service(localStorage.name, localStorage)
 export const localStorageN = localStorage.name
 
 
@@ -44,5 +45,6 @@ class sessionStorage implements IStorageServ {
         this.storage.removeItem(k)
     }
 }
-app.service(sessionStorage.name, ['$window', sessionStorage])
+sessionStorage.$inject = ['$window']
+app.service(sessionStorage.name, sessionStorage)
 export const sessionStorageN = sessionStorage.name

@@ -18,8 +18,8 @@
     },
     "homepage": "https://github.com/lusionx/ng1ts#readme",
     "dependencies": {
+        "@uirouter/angularjs": "^1.0.20",
         "angular": "^1.7.5",
-        "angular-ui-router": "^1.0.20",
         "moment": "^2.22.2"
     },
     "devDependencies": {
