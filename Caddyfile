@@ -1,5 +1,6 @@
 http://127.0.0.1:7012 {
   log stdout
-  header /js/app.js {
-    -Last-Modified
+  header / -Server
+  header /js/  -Last-Modified
+  header /less/ -Last-Modified
 }

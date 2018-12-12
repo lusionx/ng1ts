@@ -2,12 +2,28 @@
 <html>
 
 <head>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
     <link rel="stylesheet" href="node_modules/weui/dist/style/weui.min.css" />
+    <link rel="stylesheet/less" type="text/css" href="less/layout.less" />
+    <script src="/node_modules/less/dist/less.min.js"></script>
 </head>
 
-<body ng-app="app">
-    <a ui-sref="hello" ui-sref-active="active">Hello</a>
-    <a ui-sref="about" ui-sref-active="active">About</a>
+<body ng-app="app" ontouchstart>
+    <div class="weui-tab">
+        <div class="weui-navbar">
+            <div class="weui-navbar__item weui-bar__item_on">反馈</div>
+            <div class="weui-navbar__item">表单</div>
+            <div class="weui-navbar__item">上传</div>
+            <div class="weui-navbar__item">其它</div>
+        </div>
+        <div class="weui-tab__panel">
+            <div class="weui-tab__content page_feedback" style="display:block">
+                <a href="javascript:;" class="weui-btn weui-btn_default">Alert</a>
+                <a ui-sref="hello" ui-sref-active="active" class="weui-btn weui-btn_default">Hello</a>
+                <a ui-sref="about" ui-sref-active="active" class="weui-btn weui-btn_default">About</a>
+            </div>
+        </div>
+    </div>
     <ui-view></ui-view>
     <script>window.spa = 'app' /** eq ng-app on body */ </script>
     <script src="node_modules/moment/min/moment.min.js"></script>

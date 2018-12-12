@@ -16,7 +16,7 @@
     "bugs": {
         "url": "https://github.com/lusionx/ng1ts/issues"
     },
-    "homepage": "https://github.com/lusionx/ng1ts#readme",
+    "homepage": "https://github.com/lusionx/ng1ts",
     "dependencies": {
         "@uirouter/angularjs": "^1.0.20",
         "angular": "^1.7.5",
@@ -26,6 +26,8 @@
     },
     "devDependencies": {
         "@types/angular": "^1.6.51",
+        "less": "^3.9.0",
+        "rollup": "^0.67.4",
         "rollup-plugin-commonjs": "^9.2.0",
         "rollup-plugin-node-resolve": "^3.4.0",
         "typescript": "^3.2.1"
