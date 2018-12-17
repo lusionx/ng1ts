@@ -1,4 +1,4 @@
-angular1.x + typescript + rollup + gulp
+angular1.x + typescript + rollup + less + gulp
 =======================================
 ### ts代码约定
 - 因无法约定类型, 放弃factroy, 全转成service
