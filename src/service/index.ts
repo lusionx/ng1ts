@@ -17,7 +17,7 @@ export class WeixinAccountDao {
     constructor(
         protected $http: ng.IHttpService, protected $q: ng.IQService,
         protected $rootScope: ng.IRootScopeService, protected $log: ng.ILogService, ) { }
-    queryName(name: string, startIndex: number = 0, maxResults: number = 10) {
+    queryName(name: string, maxResults: number = 10, startIndex: number = 0, ) {
         const params = {
             startIndex, maxResults,
             nick_name_gte: name,

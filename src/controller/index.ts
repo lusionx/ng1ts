@@ -19,7 +19,7 @@ homeCtr.$inject = ['$scope', WeixinAccountDao.name, '$state', '$stateParams']
 function homeCtr($scope: Scope<{ q: string, list?: any[] }>, dao: WeixinAccountDao, $state: StateService, $stateParams: StateParams) {
     $scope.vm = { q: $stateParams['q'] }
     if ($scope.vm.q) {
-        dao.queryName($scope.vm.q).then(data => {
+        dao.queryName($scope.vm.q, 5).then(data => {
             $scope.vm.list = data.hits
         })
     }
