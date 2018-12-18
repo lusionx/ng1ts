@@ -7,10 +7,7 @@ import { StateService } from '@uirouter/angularjs'
 
 run.$inject = ['$log', ShareV.name, '$state']
 function run($log: ng.ILogService, share: ShareV, $state: StateService) {
-    const Root = {
-        [app.name]: [Router.name]
-    }
-    $log.info('run', JSON.stringify(Root))
+    $log.info('run', JSON.stringify({ [app.name]: [Router.name] }))
     $log.warn('run warn', share.ua)
     $state.go('home')
 }
