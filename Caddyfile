@@ -3,4 +3,9 @@ http://127.0.0.1:7012 {
   header / -Server
   header /js/  -Last-Modified
   header /less/ -Last-Modified
+  header /view/ -Last-Modified
+  proxy /api/system/ http://data.besth5.com/ {
+    without /api
+    transparent
+  }
 }

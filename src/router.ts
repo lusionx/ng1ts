@@ -4,6 +4,12 @@ import * as Controller from './controller'
 
 
 function Router($stateP: StateProvider) {
+    $stateP.state('home', {
+        url: '/home',
+        controller: Controller.home,
+        templateUrl: 'view/home.html',
+    })
+
     const hello: Ng1StateDeclaration = {
         name: 'hello',
         url: '/hello',
