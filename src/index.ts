@@ -1,5 +1,6 @@
 import { app, ShareV } from './all'
 import './filter'
+import './directive'
 // 通过import来执行注册
 import * as Router from './router'
 import { StateService } from '@uirouter/angularjs'
