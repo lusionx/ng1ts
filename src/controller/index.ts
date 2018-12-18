@@ -24,8 +24,8 @@ homeCtr.$inject = ['$scope', WeixinAccountDao.name]
 function homeCtr($scope: Scope<Vm>, dao: WeixinAccountDao) {
     const vm: any = {}
     $scope.vm = vm
-    dao.queryName('首').then(ls => {
-        vm.list = ls
+    dao.queryName('首').then(data => {
+        vm.list = data.hits
     })
 }
 app.controller(homeCtr.name, homeCtr)

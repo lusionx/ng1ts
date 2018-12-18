@@ -1,4 +1,5 @@
-import { app } from '../all'
+import { app, CONFIG } from '../all'
+import { h5Account, ListData } from '../model'
 
 
 export class mySrv {
@@ -20,9 +21,9 @@ export class WeixinAccountDao {
             nick_name_gte: name,
             sort: 'nick_name',
         }
-        return this.$q<any>((res, rej) => {
-            this.$http.get('/api/system/weixin_accounts', { params }).then((resp) => {
-                res(resp.data)
+        return this.$q<ListData<h5Account>>((res, rej) => {
+            this.$http.get<h5Account[]>('/api/system/weixin_accounts', { params }).then((resp) => {
+                res({ total: +resp.headers(CONFIG.headerTotal), hits: resp.data })
             }, rej)
         })
     }
