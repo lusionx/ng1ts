@@ -4,27 +4,43 @@
 <head>
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
     <link rel="stylesheet" href="node_modules/weui/dist/style/weui.min.css" />
-    <link rel="stylesheet/less" type="text/css" href="less/layout.less" />
+    <link rel="stylesheet/less" type="text/css" href="less/ap.less" />
     <script src="node_modules/less/dist/less.min.js"></script>
 </head>
 
 <body ng-app="app" ontouchstart>
     <div class="weui-tab">
-        <div class="weui-navbar">
-            <div class="weui-navbar__item weui-bar__item_on">反馈</div>
-            <div class="weui-navbar__item">表单</div>
-            <div class="weui-navbar__item">上传</div>
-            <div class="weui-navbar__item">其它</div>
-        </div>
         <div class="weui-tab__panel">
-            <div class="weui-tab__content page_feedback" style="display:block">
-                <a href="javascript:;" class="weui-btn weui-btn_default">Alert</a>
-                <a ui-sref="hello" ui-sref-active="active" class="weui-btn weui-btn_default">Hello</a>
-                <a ui-sref="about" ui-sref-active="active" class="weui-btn weui-btn_default">About</a>
-            </div>
+            <ui-view></ui-view>
+            <a href="javascript:;" class="weui-btn weui-btn_default">Alert</a>
+            <a ui-sref="hello" ui-sref-active="active" class="weui-btn weui-btn_default">Hello</a>
+            <a ui-sref="about" ui-sref-active="active" class="weui-btn weui-btn_default">About</a>
+        </div>
+        <div class="weui-tabbar">
+            <a ui-sref="hello" class="weui-tabbar__item">
+                <span class="ap-tip">
+                    <img src="./images/icon_tabbar.png" class="weui-tabbar__icon">
+                    <span class="weui-badge tr number">8</span>
+                </span>
+                <p class="weui-tabbar__label">Hello</p>
+            </a>
+            <a ui-sref="hello" class="weui-tabbar__item">
+                <img src="./images/icon_tabbar.png" class="weui-tabbar__icon">
+                <p class="weui-tabbar__label">通讯录</p>
+            </a>
+            <a ui-sref="about" class="weui-tabbar__item">
+                <span class="ap-tip">
+                    <img src="./images/icon_tabbar.png" class="weui-tabbar__icon">
+                    <span class="weui-badge weui-badge_dot tr empty"></span>
+                </span>
+                <p class="weui-tabbar__label">About</p>
+            </a>
+            <a ui-sref="about" class="weui-tabbar__item">
+                <img src="./images/icon_tabbar.png" class="weui-tabbar__icon">
+                <p class="weui-tabbar__label">我发</p>
+            </a>
         </div>
     </div>
-    <ui-view></ui-view>
     <script>window.spa = 'app' /** eq ng-app on body */ </script>
     <script src="node_modules/moment/min/moment.min.js"></script>
     <script src="node_modules/angular/angular.min.js"></script>
