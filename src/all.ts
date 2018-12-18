@@ -9,10 +9,19 @@ app.value(ShareV.name, new ShareV)
 
 
 export const CONFIG = {
-    headerTotal: 'X-Content-Record-Total'
+    root: '/api',
+    headerTotal: 'X-Content-Record-Total',
+    errorName: {
+        http: 'errorHttp',
+    }
 }
 
 
 export interface Scope<T> extends ng.IScope {
     vm: T
+}
+
+export interface Resp400 {
+    code?: string
+    message?: string
 }

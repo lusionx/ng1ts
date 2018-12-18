@@ -1,5 +1,5 @@
 import * as moment from "moment"
-import { app, Scope } from '../all'
+import { app, Scope, CONFIG } from '../all'
 import { WeixinAccountDao } from '../service'
 
 
