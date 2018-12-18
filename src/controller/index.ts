@@ -6,13 +6,13 @@ import { WeixinAccountDao } from '../service'
 interface Vm {
     spa: string
     text: string
-    now: string
+    now: moment.Moment
 }
 function mainCtr($scope: Scope<Vm>) {
     $scope.vm = {
         spa: window.spa,
         text: 'lxing',
-        now: moment().format(),
+        now: moment(),
     }
 }
 mainCtr.$inject = ['$scope']

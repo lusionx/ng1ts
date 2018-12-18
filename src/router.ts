@@ -14,7 +14,7 @@ function Router($stateP: StateProvider) {
         name: 'hello',
         url: '/hello',
         controller: Controller.main,
-        template: '<h3>hello world! {{vm.text}} {{vm.now}}</h3>'
+        template: `<h3>hello world! {{vm.text}} {{vm.now | mmt:"YYYY-MM-DD"}}</h3>`
     }
     $stateP.state(hello)
     const about: Ng1StateDeclaration = {
