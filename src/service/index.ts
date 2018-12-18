@@ -5,12 +5,11 @@ export class mySrv {
     constructor(protected $log: ng.ILogService) {
     }
     test() {
-        this.$log.log('mySrv')
+        this.$log.log('mySrv', 'test')
     }
 }
 mySrv.$inject = ['$log']
 app.service(mySrv.name, mySrv)
-export const mySrvN = mySrv.name
 
 
 export class WeixinAccountDao {

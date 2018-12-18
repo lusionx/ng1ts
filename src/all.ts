@@ -6,7 +6,7 @@ export interface Share {
     ua: string
 }
 export const shareV = 'shareV'
-app.value(shareV, { ua: 'ua' } as Share)
+app.value(shareV, { ua: 'ua from win' } as Share)
 
 
 export interface Scope<T> extends ng.IScope {

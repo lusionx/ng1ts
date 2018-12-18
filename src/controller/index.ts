@@ -20,6 +20,7 @@ app.controller(mainCtr.name, mainCtr)
 export const main = mainCtr.name
 
 
+homeCtr.$inject = ['$scope', WeixinAccountDao.name]
 function homeCtr($scope: Scope<Vm>, dao: WeixinAccountDao) {
     const vm: any = {}
     $scope.vm = vm
@@ -27,6 +28,5 @@ function homeCtr($scope: Scope<Vm>, dao: WeixinAccountDao) {
         vm.list = ls
     })
 }
-homeCtr.$inject = ['$scope', WeixinAccountDao.name]
 app.controller(homeCtr.name, homeCtr)
 export const home = homeCtr.name
