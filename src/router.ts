@@ -5,7 +5,7 @@ import * as Controller from './controller'
 
 function Router($stateP: StateProvider) {
     $stateP.state('home', {
-        url: '/home',
+        url: '/home?q',
         controller: Controller.home,
         templateUrl: 'view/home.html',
     })

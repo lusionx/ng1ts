@@ -1,16 +1,11 @@
 import * as moment from "moment"
 import { app, Scope, CONFIG } from '../all'
 import { WeixinAccountDao } from '../service'
+import { StateService, StateParams } from "@uirouter/angularjs";
 
 
-interface Vm {
-    spa: string
-    text: string
-    now: moment.Moment
-}
-function mainCtr($scope: Scope<Vm>) {
+function mainCtr($scope: Scope<{ text: string, now: any }>) {
     $scope.vm = {
-        spa: window.spa,
         text: 'lxing',
         now: moment(),
     }
@@ -20,13 +15,19 @@ app.controller(mainCtr.name, mainCtr)
 export const main = mainCtr.name
 
 
-homeCtr.$inject = ['$scope', WeixinAccountDao.name]
-function homeCtr($scope: Scope<Vm>, dao: WeixinAccountDao) {
-    const vm: any = {}
-    $scope.vm = vm
-    dao.queryName('首').then(data => {
-        vm.list = data.hits
-    })
+homeCtr.$inject = ['$scope', WeixinAccountDao.name, '$state', '$stateParams']
+function homeCtr($scope: Scope<{ q: string, list?: any[] }>, dao: WeixinAccountDao, $state: StateService, $stateParams: StateParams) {
+    $scope.vm = { q: $stateParams['q'] }
+    if ($scope.vm.q) {
+        dao.queryName($scope.vm.q).then(data => {
+            $scope.vm.list = data.hits
+        })
+    }
+    $scope.fns = {
+        search: () => {
+            $state.go('home', { q: $scope.vm.q })
+        }
+    }
 }
 app.controller(homeCtr.name, homeCtr)
 export const home = homeCtr.name

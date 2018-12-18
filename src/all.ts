@@ -17,8 +17,12 @@ export const CONFIG = {
 }
 
 
+
 export interface Scope<T> extends ng.IScope {
     vm: T
+    fns: {
+        [k: string]: Function
+    }
 }
 
 export interface Resp400 {
