@@ -1,9 +1,9 @@
-import { app } from './all'
+import { app, ngName } from './all'
 import { StateProvider, Ng1StateDeclaration } from '@uirouter/angularjs'
 import * as Controller from './controller'
 
-
-Router.$inject = ['$stateProvider']
+const { uiRouter: { $stateProvider } } = ngName
+Router.$inject = [$stateProvider]
 function Router($stateP: StateProvider) {
     $stateP.state('home', {
         url: '/home?q',

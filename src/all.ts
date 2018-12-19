@@ -18,6 +18,20 @@ export const CONFIG = {
     }
 }
 
+export const ngName = {
+    $http: '$http',
+    $location: '$location',
+    $log: '$log',
+    $q: '$q',
+    $rootScope: '$rootScope',
+    $scope: '$scope',
+    uiRouter: {
+        $state: '$state',
+        $stateParams: '$stateParams',
+        $stateProvider: '$stateProvider',
+    },
+}
+
 export interface RootScope extends ng.IRootScopeService {
     /** set on app.run */
     share: ShareV

@@ -1,4 +1,4 @@
-import { app, CONFIG, Resp400 } from '../all'
+import { app, CONFIG, Resp400, ngName } from '../all'
 import { h5Account, ListData } from '../model'
 
 
@@ -9,7 +9,7 @@ export class mySrv {
         this.$log.log('mySrv', 'test')
     }
 }
-mySrv.$inject = ['$log']
+mySrv.$inject = [ngName.$log]
 app.service(mySrv.name, mySrv)
 
 
@@ -33,5 +33,5 @@ export class WeixinAccountDao {
         })
     }
 }
-WeixinAccountDao.$inject = ['$http', '$q', '$rootScope', '$log']
+WeixinAccountDao.$inject = [ngName.$http, ngName.$q, ngName.$rootScope, ngName.$log]
 app.service(WeixinAccountDao.name, WeixinAccountDao)

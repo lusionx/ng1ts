@@ -1,7 +1,7 @@
-import { app } from '../all'
+import { app, ngName } from '../all'
 import * as weui from 'weui.js'
 
-weuiSearchBar.$inject = ['$log']
+weuiSearchBar.$inject = [ngName.$log]
 function weuiSearchBar($log: ng.ILogService) {
     const directive: ng.IDirective = {
         restrict: 'A',

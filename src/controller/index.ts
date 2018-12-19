@@ -1,7 +1,7 @@
 import * as moment from "moment"
-import { app, Scope, CONFIG } from '../all'
+import { app, Scope, ngName } from '../all'
 import { WeixinAccountDao } from '../service'
-import { StateService, StateParams } from "@uirouter/angularjs";
+import { StateService, StateParams } from "@uirouter/angularjs"
 
 
 function mainCtr($scope: Scope<{ text: string, now: any }>) {
@@ -10,12 +10,12 @@ function mainCtr($scope: Scope<{ text: string, now: any }>) {
         now: moment(),
     }
 }
-mainCtr.$inject = ['$scope']
+mainCtr.$inject = [ngName.$scope]
 app.controller(mainCtr.name, mainCtr)
 export const main = mainCtr.name
 
-
-homeCtr.$inject = ['$scope', WeixinAccountDao.name, '$state', '$stateParams']
+const { $state, $stateParams } = ngName.uiRouter
+homeCtr.$inject = [ngName.$scope, WeixinAccountDao.name, $state, $stateParams]
 function homeCtr($scope: Scope<{ q: string, list?: any[] }>, dao: WeixinAccountDao, $state: StateService, $stateParams: StateParams) {
     $scope.vm = { q: $stateParams['q'] }
     if ($scope.vm.q) {
