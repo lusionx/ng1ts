@@ -13,36 +13,13 @@
         <div class="weui-tab__panel">
             <ui-view></ui-view>
         </div>
-        <div class="weui-tabbar">
-            <a ui-sref="home" class="weui-tabbar__item">
-                <span class="ap-tip">
-                    <img src="./images/icon_tabbar.png" class="weui-tabbar__icon">
-                    <span class="weui-badge tr number">8</span>
-                </span>
-                <p class="weui-tabbar__label">home</p>
-            </a>
-            <a ui-sref="hello" class="weui-tabbar__item">
-                <img src="./images/icon_tabbar.png" class="weui-tabbar__icon">
-                <p class="weui-tabbar__label">通讯录</p>
-            </a>
-            <a ui-sref="about" class="weui-tabbar__item">
-                <span class="ap-tip">
-                    <img src="./images/icon_tabbar.png" class="weui-tabbar__icon">
-                    <span class="weui-badge weui-badge_dot tr empty"></span>
-                </span>
-                <p class="weui-tabbar__label">About</p>
-            </a>
-            <a ui-sref="about" class="weui-tabbar__item">
-                <img src="./images/icon_tabbar.png" class="weui-tabbar__icon">
-                <p class="weui-tabbar__label">我发</p>
-            </a>
-        </div>
+        <ng-include src="share.bview.tabbar"></ng-include>
     </div>
     <script>window.spa = 'app' /** eq ng-app on body */ </script>
     <script src="node_modules/moment/min/moment.min.js"></script>
     <script src="node_modules/angular/angular.min.js"></script>
     <script src="node_modules/@uirouter/angularjs/release/angular-ui-router.min.js"></script>
-    <script src="node_modules/weui.js/dist/weui.js"></script>
+    <script src="node_modules/weui.js/dist/weui.min.js"></script>
     <script src="js/app.js"></script>
 </body>
 

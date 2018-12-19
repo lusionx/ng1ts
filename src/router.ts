@@ -3,6 +3,7 @@ import { StateProvider, Ng1StateDeclaration } from '@uirouter/angularjs'
 import * as Controller from './controller'
 
 
+Router.$inject = ['$stateProvider']
 function Router($stateP: StateProvider) {
     $stateP.state('home', {
         url: '/home?q',
@@ -25,8 +26,6 @@ function Router($stateP: StateProvider) {
     }
     $stateP.state(about)
 }
-Router.$inject = ['$stateProvider']
-
 app.config(Router)
 const SELF = Router.name
 export { SELF as name }

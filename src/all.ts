@@ -4,9 +4,11 @@ export const app = angular.module(window.spa, ['ui.router'])
 
 export class ShareV {
     ua: string = 'ua from win'
+    bview = {
+        tabbar: 'view/b-tabbar.html',
+    }
 }
 app.value(ShareV.name, new ShareV)
-
 
 export const CONFIG = {
     root: '/api',
@@ -16,9 +18,12 @@ export const CONFIG = {
     }
 }
 
+export interface RootScope extends ng.IRootScopeService {
+    /** set on app.run */
+    share: ShareV
+}
 
-
-export interface Scope<T> extends ng.IScope {
+export interface Scope<T> extends ng.IScope, RootScope {
     vm: T
     fns: {
         [k: string]: Function
